@@ -1,26 +1,30 @@
 class BooksController < ApplicationController
-  def index
-  end
   
+  def index
+    @books = Book.all  
+  end
+    
   def new
-    @Books = Book.new
+    @books = Book.new
   end
 
   def create
-    list = Book.new(book_params)
-    list.save
+    book = Book.new(book_params)
+    book.save
     redirect_to '/top'
   end
 
   def show
+    @book = Book.find(params[:id])  
   end
+
 
   def edit
   end
   
   private
 
-  def list_params
+  def book_params
     params.require(:book).permit(:title, :body)
   end
 
