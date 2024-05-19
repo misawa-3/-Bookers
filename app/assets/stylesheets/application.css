@@ -24,3 +24,17 @@ tbody {
 th {
     padding: 10px
 }
+
+.flash-message {
+  border-radius: 5px;
+  padding: 16px 24px;
+  margin: 16px 0px;
+}
+ 
+.flash-message.notice {
+  color: #b8d200;
+}
+ 
+.flash-message.alert {
+  color: #930403;
+}

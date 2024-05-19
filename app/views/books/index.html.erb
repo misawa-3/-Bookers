@@ -1,9 +1,7 @@
+
 <h1>
   <strong>Books</strong>
 </h1>
-
-
-
 
 <table>
   <thead>
@@ -18,7 +16,7 @@
        <tr>
           <th><%= book.title %></th>
  　　    　　<th><%= book.body %></th>
- 　　       <th><%= link_to "Show", book_path(book) %></th>
+ 　　       <th><%= link_to "Show", show_book_path(book) %></th>
  　　       <th><%= link_to "Edit", edit_book_path(book) %></th>
  　　       <th><%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></th>
      　　 </tr>
@@ -30,6 +28,7 @@
 <h2>
   <strong>New Book</strong>
 </h2>
+
 
 <%= form_with model: Book.new do |f| %>
   <h4>Tiile</h4>
