@@ -2,16 +2,17 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @book = Book.new
   end
-
+  
   def create
     @book = Book.new(book_params)
-    if  
+    if
       @book.save
       flash[:notice] = "Book was successfully created."
       redirect_to show_book_path(@book)
     else
-      flash.now[:alert] = "投稿に失敗しました。" 
+      @books = Book.all
       render :index
     end
   end
